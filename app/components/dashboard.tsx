@@ -148,6 +148,30 @@ function HowItWorks() {
   );
 }
 
+function SafetyTips() {
+  const tips = [
+    "Never share your OTP or PIN, even with someone claiming to be from your bank or e-wallet.",
+    "Verify requests using the official app, website, or phone number you find yourself.",
+    "Avoid unexpected links. Open the official app or type the known website address instead.",
+    "Do not send money under pressure. Pause and check urgent requests with someone you trust.",
+    "Keep personal details, passwords, and account information private in chats and calls.",
+    "If a message claims to be from a delivery service or government office, contact it through an official channel.",
+  ];
+
+  return (
+    <section className="safety-tips" aria-labelledby="safety-tips-title">
+      <div className="safety-tips-heading">
+        <span className="eyebrow">STAY SCAM AWARE</span>
+        <h2 id="safety-tips-title">Simple habits that help protect you</h2>
+        <p>Take a moment to check before you share information, click, or pay.</p>
+      </div>
+      <ul>
+        {tips.map((tip) => <li key={tip}>{tip}</li>)}
+      </ul>
+    </section>
+  );
+}
+
 export default function Dashboard() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
@@ -202,6 +226,7 @@ export default function Dashboard() {
         <div className="privacy"><Icon name="lock" /><p><b>Your privacy matters.</b> Messages are analyzed locally in your browser and are not uploaded or stored by this app.</p><a href="#how">Learn how it works <Icon name="arrow" /></a></div>
       </section>
       <HowItWorks />
+      <SafetyTips />
       <footer><b>⬡ ScamSense PH</b><span>Think before you click.</span><p>Made for awareness. Always verify through official channels.</p></footer>
     </main>
   );
